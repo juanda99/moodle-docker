@@ -1,0 +1,5 @@
+bbdd
+dump/*.sql
+moodle-data
+proxy/certs
+.env
