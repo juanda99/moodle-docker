@@ -37,9 +37,8 @@ docker-php-ext-install -j$(nproc) \
     mysqli \
     soap \
     xmlrpc \
-    zip 
-
-  # opcache \ Not used, to prevent segmentation fault (11), possible coredump in /etc/apache2
+    zip \
+    opcache # Not used, to prevent segmentation fault (11), possible coredump in /etc/apache2
 
 # Keep our image size down..
 apt-get remove --purge -y $BUILD_PACKAGES

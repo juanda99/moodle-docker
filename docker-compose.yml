@@ -39,7 +39,7 @@ services:
     container_name: moodle
     depends_on: [db]
     build:
-      context: .
+      context: ./moodle
     environment:
       VIRTUAL_HOST: "${MOODLE_URL}"
       MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
@@ -54,7 +54,10 @@ services:
       - frontend
       - backend
     volumes:
-      - "./moodle-data:/var/www/html"
+      - "./moodle-root:/var/www/html"
+      - "./moodle-data:/var/moodledata"
+    # ports:
+    #   - 80:80
 
   db:
     hostname: db

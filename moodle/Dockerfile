@@ -1,8 +1,8 @@
 FROM  php:7.0-apache
 LABEL MAINTAINER juanda <juandacorreo@gmail.com>
 
-# Moodle version without . (34 means 3.4)
-ARG VERSION=34
+# Moodle version without . (36 means 3.6)
+ARG VERSION=36
 
 VOLUME ["/var/moodledata"]
 EXPOSE 80
@@ -13,7 +13,7 @@ EXPOSE 80
 ARG DEBIAN_FRONTEND=noninteractive
 
 ## extensions based on https://github.com/moodlehq/moodle-php-apache/blob/master/Dockerfile
-COPY moodle/php-extensions.sh /tmp
+COPY ./php-extensions.sh /tmp
 RUN /tmp/php-extensions.sh
 
 
@@ -51,4 +51,4 @@ RUN	echo "Installing moodle" && \
 # Fix the original permissions of /tmp, the PHP default upload tmp dir.
 RUN chmod 777 /tmp && chmod +t /tmp
 
-COPY ./moodle/moodle-config.php /moodle/config.php
+COPY ./moodle-config.php /moodle/config.php

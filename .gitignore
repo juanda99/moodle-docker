@@ -1,5 +1,16 @@
-bbdd
-dump/*.sql
-moodle-data
 proxy/certs
 .env
+.vscode
+.kk2.swp
+
+# don't include the content of the following folders
+moodle-data/*
+moodle-root/*
+bbdd/*
+dump/*
+
+# keep folders
+!moodle-data/.gitkeep
+!moodle-root/.gitkeep
+!bbdd/.gitkeep
+!dump/.gitkeep
