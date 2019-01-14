@@ -10,3 +10,5 @@ MOODLE_ADMIN_PASSWORD=password
 
 MOODLE_URL=moodle.catedu.org
 PHPMYADMIN_URL=phpmyadmin.catedu.org
+
+SSL_EMAIL=________@catedu.es

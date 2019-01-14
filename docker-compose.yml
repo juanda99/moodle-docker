@@ -50,6 +50,9 @@ services:
       MOODLE_ADMIN: "${MOODLE_ADMIN}"
       MOODLE_ADMIN_PASSWORD: "${MOODLE_ADMIN_PASSWORD}"
       MOODLE_URL: "${MOODLE_URL}"
+      MOODLE_SSL: "true"
+      LETSENCRYPT_HOST: "${MOODLE_URL}"
+      LETSENCRYPT_EMAIL: "${SSL_EMAIL}"
     networks:
       - frontend
       - backend
